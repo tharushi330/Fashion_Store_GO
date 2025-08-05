@@ -1,19 +1,83 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Place Order</title>
+    <style>
+        
+        body {
+            background: linear-gradient(to right, #dff6ff, #b6e2d3);
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        
+        .order-form {
+            background-color: #ffffff;
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .order-form h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            color: #444;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 18px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            background-color: #28a745;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+    </style>
 </head>
 <body>
-    <h2>Place a T-Shirt Order</h2>
-    <form action="/place-order" method="post">
-        <label>Contact Number:</label><br>
-        <input type="text" name="contact" required><br><br>
+    <form class="order-form" action="/place-order" method="post">
+        <h2>Place a T-Shirt Order</h2>
 
-        <label>Size (XS/S/M/L/XL/XXL):</label><br>
-        <input type="text" name="size" required><br><br>
+        <label for="contact">Contact Number:</label>
+        <input type="text" name="contact" id="contact" required>
 
-        <label>Quantity:</label><br>
-        <input type="number" name="qty" min="1" required><br><br>
+        <label for="size">Size (XS/S/M/L/XL/XXL):</label>
+        <input type="text" name="size" id="size" required>
+
+        <label for="qty">Quantity:</label>
+        <input type="number" name="qty" id="qty" min="1" required>
 
         <input type="submit" value="Place Order">
     </form>
