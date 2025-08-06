@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Order Details</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #121212;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #f1f1f1;
+    }
+
+    .order-container {
+      max-width: 500px;
+      margin: 60px auto;
+      background-color: #1e1e1e;
+      padding: 30px 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    }
+
+    h2 {
+      text-align: center;
+      color: #ffffff;
+      margin-bottom: 25px;
+    }
+
+    .order-details {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      margin-bottom: 25px;
+    }
+
+    .detail-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 16px;
+      padding: 10px 15px;
+      background-color: #2c2f33;
+      border-radius: 8px;
+    }
+
+    .detail-label {
+      font-weight: 600;
+      color: #b0b0b0;
+    }
+
+    .detail-value {
+      font-weight: 700;
+      color: #e0e0e0;
+    }
+
+    /* Status colors */
+    .status {
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      width: fit-content;
+    }
+    .processing {
+      background-color: #ff9800;
+      color: #1a1a1a;
+    }
+    .delivering {
+      background-color: #2196f3;
+      color: #fff;
+    }
+    .delivered {
+      background-color: #4caf50;
+      color: #fff;
+    }
+
+    .total-amount {
+      font-size: 18px;
+      font-weight: 700;
+      color: #4caf50;
+      text-align: center;
+      margin-bottom: 30px;
+      user-select: none;
+    }
+
+    .action-buttons {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      flex: 1;
+      text-align: center;
+      padding: 12px 0;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+      cursor: pointer;
+      user-select: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-primary {
+      background-color: #4a90e2;
+      color: #fff;
+      border: none;
+    }
+    .btn-primary:hover {
+      background-color: #357ab8;
+    }
+
+    .btn-secondary {
+      background-color: #2c2f33;
+      color: #b0b0b0;
+      border: 1px solid #444;
+    }
+    .btn-secondary:hover {
+      background-color: #3a3d43;
+      color: #e0e0e0;
+    }
+
+    @media (max-width: 600px) {
+      .order-container {
+        margin: 20px;
+        padding: 20px;
+      }
+      .action-buttons {
+        flex-direction: column;
+      }
+      .btn {
+        flex: unset;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="order-container">
+    <h2>📋 Order Details</h2>
+
+    <div class="order-details">
+      <div class="detail-row">
+        <span class="detail-label">🆔 Order ID:</span>
+        <span class="detail-value">{{.OrderID}}</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">📱 Contact:</span>
+        <span class="detail-value">{{.CustomerID}}</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">👕 Size:</span>
+        <span class="detail-value">{{.Size}}</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">📦 Quantity:</span>
+        <span class="detail-value">{{.Quantity}}</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">📋 Status:</span>
+        <span class="status {{if eq .Status "PROCESSING"}}processing{{else if eq .Status "DELIVERING"}}delivering{{else}}delivered{{end}}">
+          {{.Status}}
+        </span>
+      </div>
+    </div>
+
+    <div class="total-amount">
+      💰 Total Amount: LKR {{printf "%.2f" .TotalAmount}}
+    </div>
+
+    <div class="action-buttons">
+      <a href="/search-order" class="btn btn-primary">Search Another Order</a>
+      <a href="/reports" class="btn btn-secondary">View All Orders</a>
+      <a href="/" class="btn btn-secondary">Back to Home</a>
+    </div>
+  </div>
+</body>
+</html>

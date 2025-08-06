@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Search Specific Order</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #121212;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #f1f1f1;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 60px auto;
+      background-color: #1e1e1e;
+      padding: 30px 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    }
+
+    h2 {
+      text-align: center;
+      color: #ffffff;
+      margin-bottom: 20px;
+    }
+
+    .container > div:first-of-type {
+      background-color: #2c2f33;
+      border-left: 4px solid #4a90e2;
+      padding: 12px;
+      border-radius: 5px;
+      font-size: 15px;
+      margin-bottom: 25px;
+      color: #d0d0d0;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    label {
+      font-weight: 600;
+      margin-bottom: 8px;
+      display: block;
+      color: #dddddd;
+    }
+
+    input[type="text"] {
+      padding: 12px;
+      font-size: 15px;
+      border: 1px solid #444;
+      border-radius: 6px;
+      width: 100%;
+      box-sizing: border-box;
+      background-color: #2a2a2a;
+      color: #ffffff;
+      transition: border 0.3s ease;
+    }
+
+    input[type="text"]::placeholder {
+      color: #888;
+    }
+
+    input[type="text"]:focus {
+      border-color: #4a90e2;
+      outline: none;
+    }
+
+    button {
+      background-color: #4a90e2;
+      color: #fff;
+      padding: 12px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #357ab8;
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 20px;
+      text-align: center;
+      color: #4a90e2;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        margin: 20px;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>🔍 Search Specific Order</h2>
+
+    <div>
+      💡 Enter the Order ID to find specific order details. Order IDs follow the format:
+      <strong>ODR#00001</strong>, <strong>ODR#00002</strong>, etc.
+    </div>
+
+    <form action="/search-order" method="post">
+      <div>
+        <label for="orderid">🆔 Order ID:</label>
+        <input type="text" id="orderid" name="orderid" placeholder="Enter Order ID (e.g., ODR#00001)" required />
+      </div>
+
+      <button type="submit">Search Order</button>
+    </form>
+
+    <a href="/">← Back to Home</a>
+  </div>
+</body>
+</html>

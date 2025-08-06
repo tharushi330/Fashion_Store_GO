@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Status Update Error</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #121212;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #f1f1f1;
+    }
+
+    .error-container {
+      max-width: 480px;
+      margin: 60px auto;
+      background-color: #1e1e1e;
+      padding: 30px 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      text-align: center;
+    }
+
+    .error-icon {
+      font-size: 60px;
+      margin-bottom: 15px;
+      color: #e74c3c; /* Red color for error */
+      user-select: none;
+    }
+
+    h2 {
+      margin: 0 0 20px 0;
+      font-weight: 700;
+      color: #ff4d4d;
+    }
+
+    .error-message {
+      background-color: #2c2f33;
+      padding: 18px 20px;
+      border-radius: 10px;
+      font-size: 16px;
+      color: #e0e0e0;
+      line-height: 1.4;
+      margin-bottom: 30px;
+      user-select: text;
+    }
+
+    .error-message strong {
+      color: #ff6666;
+    }
+
+    .action-buttons {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      flex: 1;
+      text-decoration: none;
+      padding: 12px 0;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 16px;
+      cursor: pointer;
+      user-select: none;
+      transition: background-color 0.3s ease;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background-color: #e74c3c;
+      color: #fff;
+      border: none;
+    }
+    .btn-primary:hover {
+      background-color: #c0392b;
+    }
+
+    .btn-secondary {
+      background-color: #2c2f33;
+      color: #b0b0b0;
+      border: 1px solid #444;
+    }
+    .btn-secondary:hover {
+      background-color: #3a3d43;
+      color: #e0e0e0;
+    }
+
+    @media (max-width: 600px) {
+      .error-container {
+        margin: 20px;
+        padding: 20px;
+      }
+      .action-buttons {
+        flex-direction: column;
+      }
+      .btn {
+        flex: unset;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="error-container">
+    <div class="error-icon">❌</div>
+    <h2>Status Update Failed</h2>
+    
+    <div class="error-message">
+      <strong>Error:</strong> Invalid Order ID or the order is already delivered. Only orders with status "PROCESSING" or "DELIVERING" can be updated.
+    </div>
+
+    <div class="action-buttons">
+      <a href="/change-status" class="btn btn-primary">Try Again</a>
+      <a href="/reports" class="btn btn-secondary">View All Orders</a>
+      <a href="/" class="btn btn-secondary">Back to Home</a>
+    </div>
+  </div>
+</body>
+</html>

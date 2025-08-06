@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Order Not Found</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #121212;
+      color: #f0f0f0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .container {
+      background-color: #1e1e1e;
+      padding: 40px 30px;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+      max-width: 480px;
+      width: 100%;
+    }
+
+    .icon {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: #bb86fc;
+    }
+
+    h2 {
+      color: #bb86fc;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+
+    .message {
+      background-color: #2a2a2a;
+      padding: 16px;
+      border-left: 4px solid #b00020;
+      color: #f8d7da;
+      margin-bottom: 30px;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+    }
+
+    .actions a {
+      padding: 12px 24px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .actions a.primary {
+      background-color: #bb86fc;
+      color: #fff;
+    }
+
+    .actions a.secondary {
+      background-color: #3a3a3a;
+      color: #e0e0e0;
+    }
+
+    .actions a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="icon">🔍</div>
+    <h2>Order Not Found</h2>
+    
+    <div class="message">
+      <strong>Sorry!</strong> The order you're looking for doesn't exist in our system.<br />
+      Please check the Order ID and try again.
+    </div>
+
+    <div class="actions">
+      <a href="/search-order" class="primary">Search Again</a>
+      <a href="/reports" class="secondary">View All Orders</a>
+      <a href="/" class="secondary">Back to Home</a>
+    </div>
+  </div>
+</body>
+</html>

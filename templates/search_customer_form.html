@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Search Customer Orders</title>
+  <style>
+    /* Reset */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      background: #121212;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      color: #e0e0e0;
+      user-select: none;
+    }
+
+    div {
+      background: #1e1e1e;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.9);
+      max-width: 400px;
+      width: 100%;
+      padding: 30px 25px;
+      text-align: center;
+    }
+
+    h2 {
+      margin: 0 0 25px;
+      font-size: 1.8rem;
+      color: #bb86fc;
+    }
+
+    form > div {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #999;
+      user-select: text;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 12px 15px;
+      font-size: 1rem;
+      border-radius: 10px;
+      border: none;
+      background: #333;
+      color: #eee;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    input[type="text"]::placeholder {
+      color: #777;
+    }
+
+    input[type="text"]:focus {
+      outline: none;
+      background: #444;
+      box-shadow: 0 0 8px #bb86fc;
+      color: #fff;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px 0;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: #e0e0e0;
+      background: #3700b3;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(55, 0, 179, 0.6);
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+      user-select: none;
+    }
+
+    button:hover,
+    button:focus {
+      background: #6200ee;
+      box-shadow: 0 6px 18px rgba(98, 0, 238, 0.8);
+      outline: none;
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 25px;
+      color: #bb86fc;
+      text-decoration: none;
+      font-weight: 600;
+      user-select: none;
+      transition: color 0.3s ease;
+    }
+
+    a:hover,
+    a:focus {
+      color: #e0e0e0;
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <h2>👤 Search Customer Orders</h2>
+
+    <form action="/search-customer" method="post">
+      <div>
+        <label for="contact">📱 Customer Contact Number:</label>
+        <input
+          type="text"
+          id="contact"
+          name="contact"
+          placeholder="Enter contact number to search"
+          required
+        />
+      </div>
+
+      <button type="submit">Search Orders</button>
+    </form>
+
+    <a href="/">← Back to Home</a>
+  </div>
+</body>
+</html>
